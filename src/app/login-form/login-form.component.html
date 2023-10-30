@@ -1,0 +1,55 @@
+<div class="outer-container">
+  <mat-toolbar>
+    <div class="logo">
+      <img src="assets/images/icons8-treadmill-64.png" alt="learn-portal-logo" >
+    </div>
+    <div class="menu">
+      <h1>FitZone</h1>
+    </div>
+  </mat-toolbar>
+<div class="inner-container">
+<div class="image">
+  <img src="assets/images/gym-image1.jpg" alt="gym-image1">
+</div>
+  <div class="signInForm">
+  <div class="header">
+    <h3>Sign In</h3>
+    <h5>welcome back</h5>
+  </div>
+
+  <div class="login-form">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+    <mat-form-field>
+      <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+      <mat-label>Enter Username</mat-label>
+      <input matInput type="text" formControlName="username" name="username" >
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-icon matPrefix class="my-icon">lock</mat-icon>
+      <mat-label>Enter Password</mat-label>
+      <input matInput type="password" formControlName="password" name="password">
+    </mat-form-field>
+
+
+      <mat-radio-group aria-label="Type of User" [(ngModel)]="selectedUserType" [ngModelOptions]="{standalone: true}">
+        <mat-radio-button value="trainee">Trainee</mat-radio-button>
+        <mat-radio-button value="trainer">Trainer</mat-radio-button>
+      </mat-radio-group>
+
+    <button mat-raised-button color="primary" type="submit" >Sign In</button>
+    </form>
+  </div>
+
+  <div class="bottom">
+    <h5>or</h5>
+    <div class ="Sign-Up">
+      <h5>Don't have an account ?</h5>&nbsp;
+      <h5> <a  routerLink="/joinUs">Sign Up</a></h5>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>

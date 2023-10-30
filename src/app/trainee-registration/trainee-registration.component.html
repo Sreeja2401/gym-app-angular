@@ -1,0 +1,67 @@
+<mat-toolbar>
+  <div class="logo">
+    <img src="assets/images/icons8-treadmill-64.png" alt="learn-portal-logo" >
+  </div>
+  <div class="menu">
+    <h1>FitZone</h1>
+  </div>
+</mat-toolbar>
+<div class="container">
+
+  <div class="header">
+    <h1>Registration</h1>
+    <h4>Trainee</h4>
+  </div>
+  <div class="image-registrationdetails">
+    <div class="image">
+      <img Src="assets/trainee-registration.png" alt="trainer-registration-image">
+    </div>
+    <div class="registrationdetails">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+<!--      <label>First Name</label>-->
+      <mat-form-field >
+        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+        <mat-label>Enter Firstname</mat-label>
+        <input matInput class="form-control" id="firstname"
+               [(ngModel)]="trainee.firstName" name="firstname" >
+      </mat-form-field>
+
+<!--      <label>Last Name</label>-->
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+        <mat-label>Enter Lastname</mat-label>
+        <input matInput class="form-control" id="lastName"
+               [(ngModel)]="trainee.lastName" name="lastName">
+      </mat-form-field>
+
+<!--      <label>Email</label>-->
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">email</mat-icon>
+        <mat-label>Enter Email</mat-label>
+        <input matInput  class="form-control" id="email"
+               [(ngModel)]="trainee.email" name="email">
+      </mat-form-field>
+
+<!--      <label>Address</label>-->
+      <mat-form-field class="example-full-width">
+        <mat-icon matPrefix class="my-icon">home</mat-icon>
+        <mat-label>Enter your full address </mat-label>
+        <textarea matInput class="form-control" id="address"
+                  [(ngModel)]="trainee.address" name="address"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Date of Birth (optional)</mat-label>
+        <input matInput [matDatepicker]="datePicker"  class="form-control" id="dateOfBirth"
+               [(ngModel)]="trainee.dateOfBirth" name="dateOfBirth">
+        <mat-datepicker-toggle [for]="datePicker" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #datePicker></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary">submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

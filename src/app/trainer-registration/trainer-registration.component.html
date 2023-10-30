@@ -1,0 +1,63 @@
+<mat-toolbar>
+  <div class="logo">
+    <img src="assets/images/icons8-treadmill-64.png" alt="learn-portal-logo" >
+  </div>
+  <div class="menu">
+    <h1>FitZone</h1>
+  </div>
+</mat-toolbar>
+<div class="container">
+  <div class="header">
+    <h1>Registration</h1>
+    <h4>Trainer</h4>
+  </div>
+  <div class="image-registrationdetails">
+    <div class="image">
+      <img Src="assets/gym-trainer-registration.jpg" alt="trainer-registration-image">
+    </div>
+    <form (ngSubmit)="onSubmit()" >
+    <div class="registrationdetails" >
+<div class="form-group">
+<!--      <label>First Name</label>-->
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+        <mat-label>Enter Firstname</mat-label>
+        <input matInput type="text" class="form-control" id="firstName"
+               [(ngModel)]="trainer.firstName" name="firstname" >
+      </mat-form-field>
+
+<!--      <label>Last Name</label>-->
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+        <mat-label>Enter Lastname</mat-label>
+        <input matInput type="text" class="form-control" id="lastName"
+               [(ngModel)]="trainer.lastName" name="lastName">
+      </mat-form-field>
+
+<!--      <label>Email</label>-->
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">email</mat-icon>
+        <mat-label>Enter Email</mat-label>
+        <input matInput type="text" class="form-control" id="email"
+               [(ngModel)]="trainer.email" name="email">
+      </mat-form-field>
+
+<!--      <label>Specialization</label>-->
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">fitness_center</mat-icon>
+        <mat-label>please select specialization</mat-label>
+        <mat-select class="form-control" id="trainingType"
+                    [(ngModel)]="trainer.trainingType" name="trainingType">
+          <mat-option *ngFor="let specialization of specializations" [value]="specialization.value">
+            {{specialization.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">submit</button>
+
+    </div>
+    </div>
+    </form>
+  </div>
+</div>
+

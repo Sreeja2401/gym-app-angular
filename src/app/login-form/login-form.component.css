@@ -1,0 +1,94 @@
+/* Center the entire container */
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*width: 38%;*/
+  /*height: 60%;*/
+  /*margin-top: 7%;*/
+
+}
+
+
+.outer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+h3 {
+  font-weight: bold;
+  color: black;
+  margin: 0;
+  font-size: 25px;
+}
+
+h5 {
+
+  color: #3d3c3c;
+  margin: 0;
+  font-size: 15px;
+  margin-top: 3px;
+}
+
+
+.header, .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.header{
+  margin-top: 7%;
+}
+
+
+.login-form {
+  flex: 1;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+.image{
+  flex: 1;
+}
+.image img{
+  width: 680px;
+  height: 680px;
+}
+.login-form mat-form-field{
+  width: 95%;
+}
+
+.Sign-Up {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.mat-form-field {
+  margin: 10px 0;
+}
+
+
+.Sign-Up a {
+  color: #007BFF;
+  transition: background-color 0.3s;
+}
+
+.Sign-Up a:hover {
+  color: #093b71;
+}
+.login-form Button {
+  margin-top: 5%;
+  flex-grow: 1;
+  width: 95% ;
+  color: #ffffff;
+  background-color: #5a6d8a;
+}
