@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="toolbar">
+    <mat-toolbar>
+      <button mat-button  routerLink="/homePage">
+        <mat-icon class="icon">home</mat-icon>
+      </button>
+
+      <div class="login">
+        <div class="username">
+          <button mat-button (click)="myAccount()"><mat-icon class="icon">account_circle</mat-icon></button>&nbsp;&nbsp;
+          <h1> {{trainerProfile.username}}</h1>
+
+        </div>
+      </div>
+      </mat-toolbar>
+      </div>
+  <div class="login-form">
+    <h1>UPDATE DETAILS</h1>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+        <mat-label>enter Firstname</mat-label>
+        <input matInput name="firstName" [(ngModel)]="trainerProfile.firstName">
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+        <mat-label>enter LastName</mat-label>
+        <input matInput name="lastName" [(ngModel)]="trainerProfile.lastName">
+      </mat-form-field>
+
+
+      <mat-slide-toggle [(ngModel)]="trainerProfile.active" name="active">Status</mat-slide-toggle>
+
+      <button mat-raised-button color="primary" type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>

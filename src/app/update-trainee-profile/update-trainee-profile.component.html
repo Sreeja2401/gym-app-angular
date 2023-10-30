@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="toolbar">
+    <mat-toolbar>
+<!--      <div class="logo">-->
+<!--        <img src="assets/images/icons8-treadmill-64.png" alt="learn-portal-logo" >-->
+<!--      </div>-->
+      <button mat-button  routerLink="/homePage">
+        <mat-icon class="icon">home</mat-icon>
+      </button>
+<!--      <div class="menu">-->
+<!--        <h1>FitZone</h1>-->
+<!--      </div>-->
+      <div class="login">
+        <div class="username">
+          <button mat-button (click)="myAccount()"><mat-icon class="icon">account_circle</mat-icon></button>&nbsp;&nbsp;
+
+<!--          <button mat-button  routerLink="/myAccount-trainer">-->
+<!--            <mat-icon class="icon">account_circle</mat-icon>-->
+<!--          </button>-->
+          <h1> {{traineeProfile.username}}</h1>
+        </div>
+
+
+      </div>
+
+    </mat-toolbar>
+  </div>
+  <div class="inner-container">
+
+  <div class="student-details">
+  <form   (ngSubmit)="onSubmit()">
+
+        <h2>UPDATE DETAILS</h2>
+
+        <mat-form-field >
+          <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+          <mat-label>enter first name</mat-label>
+          <input matInput type="text" name="firstName" [(ngModel)]="traineeProfile.firstName">
+        </mat-form-field>
+
+
+        <mat-form-field >
+          <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+          <mat-label>enter Last name</mat-label>
+          <input matInput type="text"  name="lastName" [(ngModel)]="traineeProfile.lastName">
+        </mat-form-field>
+
+
+        <mat-form-field >
+          <mat-icon matPrefix class="my-icon">email</mat-icon>
+          <mat-label>enter email</mat-label>
+          <input matInput type="text"  name="email" [(ngModel)]="traineeProfile.email" >
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [matDatepicker]="datePicker"  name="dateOfBirth" [(ngModel)]="traineeProfile.dateOfBirth">
+          <mat-datepicker-toggle [for]="datePicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #datePicker></mat-datepicker>
+        </mat-form-field>
+
+
+        <mat-form-field >
+          <mat-icon matPrefix class="my-icon">home</mat-icon>
+          <mat-label>enter full address</mat-label>
+          <input matInput type="text"  name="address" [(ngModel)]="traineeProfile.address">
+        </mat-form-field>
+
+
+      <mat-slide-toggle [(ngModel)]="traineeProfile.active" [ngModelOptions]="{standalone: true}">Status</mat-slide-toggle>
+
+      <button mat-raised-button (click)="myAccount()">save changes</button>&nbsp;&nbsp;
+
+  </form>
+      </div>
+  </div>
+    </div>
+
+

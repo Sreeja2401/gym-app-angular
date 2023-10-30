@@ -1,0 +1,14 @@
+.text {
+  display: flex;
+  align-items: center; /* Vertically align items */
+}
+
+.data-header {
+  flex: 1; /* Allow the header to expand and take available space */
+  margin-right: 10px; /* Add some space between the header and the close button */
+}
+
+.close-button {
+  font-size: 24px; /* Adjust the size as needed */
+  color: #000; /* Adjust the color as needed */
+}

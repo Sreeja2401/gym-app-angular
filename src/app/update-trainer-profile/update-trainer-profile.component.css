@@ -1,0 +1,54 @@
+.container{
+  display: flex;
+  flex-direction: column;
+
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.login-form form mat-form-field{
+  width: 140%;
+}
+h1{
+  margin-bottom: 3%;
+  font-weight: bold;
+}
+
+
+.login {
+  display: flex;
+  flex: 3;
+  align-items: flex-end;
+  padding-left: 75%;
+}
+
+
+.icon{
+  transform: scale(2);
+}
+mat-toolbar{
+  background-color: #e6eef8;
+}
+.login-form button{
+  color: #ffffff;
+  background-color: #5a6d8a;
+  margin-top: 5%;
+  width: 60%;
+}
+.username{
+  display: flex;
+  flex-direction: row;
+}
+
+
+/*!* Adjust the values as needed for the best alignment and spacing *!*/

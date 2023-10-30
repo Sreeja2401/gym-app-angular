@@ -1,0 +1,29 @@
+button:hover {
+  color: #78a8dc;
+}
+button{
+  font-family: Poppins;
+}
+.logo img {
+  height: 48px; /* Set the desired height */
+  width: 65px; /* Set the desired width */
+}
+.menu h1{
+  font-size: 25px;
+  padding-right: 50%;
+
+}
+.logo,.menu{
+  display: flex;
+  flex: 1;
+}
+
+.login {
+  display: flex;
+  flex: 3;
+  align-items: flex-end; /* Align elements to the end */
+  padding-left: 68%;
+}
+.login button {
+  margin-right: 10px; /* Adjust the value to set the desired gap */
+}

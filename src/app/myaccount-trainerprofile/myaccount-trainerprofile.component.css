@@ -1,0 +1,150 @@
+.mat-mdc-table {
+  width: fit-content;
+  max-height: 500px;
+  overflow: auto;
+
+}
+.mat-column-name {
+  height: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+
+}
+.trainer-profile {
+
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+}
+
+.trainer-details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  margin-left: 15%;
+}
+.my-trainees {
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  align-items: flex-start;
+
+}
+
+.my-trainees-header {
+  display: flex;
+  flex-direction: row;
+  gap:15px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+.my-trainees-header h3{
+  margin-right: 45px;
+}
+
+h1,h3,h2 {
+  font-weight: bold;
+  color: black;
+}
+
+.my-trainees-header button{
+  margin-left: 150px;
+}
+
+h3 {
+  /*font-weight: bold;*/
+  color: black;
+  margin-bottom: 1px;
+}
+
+.my-trainees-header h3{
+  font-weight: bold;
+  color: black;
+}
+
+.trainees-table {
+  width: 60%;
+}
+.trainees-table mat-row,mat-cell{
+  height: 18px;
+  font-size: 12px;
+}
+.trainees-table {
+  width: 60%;
+}
+
+.my-trainings p {
+  margin-bottom: 50px;
+}
+/* Adjust the height and font size of mat-row and mat-cell as needed */
+.trainees-table mat-row,
+.trainees-table mat-cell {
+  height: 30px; /* Adjust the height to make it readable */
+  font-size: 14px; /* Adjust the font size to make it more legible */
+}
+button:hover {
+  color: #78a8dc;
+}
+button{
+  font-family: Poppins;
+}
+.logo img {
+  height: 48px; /* Set the desired height */
+  width: 65px; /* Set the desired width */
+}
+.menu h1{
+  font-size: 25px;
+  padding-right: 50%;
+
+}
+.logo,.menu{
+  display: flex;
+  flex: 1;
+}
+
+.login {
+  display: flex;
+  flex: 3;
+  align-items: flex-end; /* Align elements to the end */
+  padding-left: 60%;
+}
+.login button {
+  margin-right: 10px; /* Adjust the value to set the desired gap */
+}
+
+
+.login button{
+  color: #ffffff;
+  background-color: #5a6d8a;
+  width: 40%;
+}
+
+mat-toolbar{
+  background-color: #e6eef8;
+}
+.trainer-details button{
+  color: #ffffff;
+  background-color: #5a6d8a;
+  width: 40%;
+}
+.my-trainees-header button{
+  color: #ffffff;
+  background-color: #5a6d8a;
+  width: 40%;
+}
+
+
+
+
