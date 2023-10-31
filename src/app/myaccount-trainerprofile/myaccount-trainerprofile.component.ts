@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TrainerProfile} from "../model/TrainerProfile";
-import {TraineeDto} from "../model/TraineeDto";
 import {Router} from "@angular/router";
+
 export interface TraineeInfo {
-  username: string|undefined;
-  firstname: string|undefined;
-  lastname:string|undefined;
+  username: string | undefined;
+  firstname: string | undefined;
+  lastname: string | undefined;
 }
 
 
@@ -17,9 +17,11 @@ export interface TraineeInfo {
 export class MyaccountTrainerprofileComponent {
   displayedColumns: string[] = ['username', 'firstname', 'lastname'];
   dataSource: TraineeInfo[] = []
-  trainerProfile=new TrainerProfile();
-  constructor(private router:Router) {
+  trainerProfile = new TrainerProfile();
+
+  constructor(private router: Router) {
   }
+
   ngOnInit() {
     const state = window.history.state;
     this.trainerProfile = state.trainerProfile;
@@ -28,26 +30,26 @@ export class MyaccountTrainerprofileComponent {
     console.log(this.trainerProfile.email)
     if (this.trainerProfile.traineeList) {
       for (const trainee of this.trainerProfile.traineeList) {
-          this.dataSource.push({
-            username:trainee.userName,
-            firstname: trainee.firstName,
-            lastname:trainee.lastName
-          });
-        }
+        this.dataSource.push({
+          username: trainee.userName,
+          firstname: trainee.firstName,
+          lastname: trainee.lastName
+        });
+      }
 
     }
 
   }
 
   editTrainers() {
-    this.router.navigate(['/editTrainerProfile'],{state:{trainerProfile:this.trainerProfile}})
+    this.router.navigate(['/editTrainerProfile'], {state: {trainerProfile: this.trainerProfile}})
   }
 
   addTrainings() {
-    this.router.navigate(['/addTrainings'],{state:{trainerProfile:this.trainerProfile}})
+    this.router.navigate(['/addTrainings'], {state: {trainerProfile: this.trainerProfile}})
   }
 
-    viewTrainings() {
-      this.router.navigate(['/trainer-trainings'],{state:{trainerProfile:this.trainerProfile}});
-    }
+  viewTrainings() {
+    this.router.navigate(['/trainer-trainings'], {state: {trainerProfile: this.trainerProfile}});
+  }
 }

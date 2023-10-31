@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TraineeProfile} from "../model/TraineeProfile";
 import {TraineeService} from "../service/trainee.service";
 import {Router} from "@angular/router";
+
 export interface TrainerInfo {
   name: string;
   specialization: string;
@@ -17,10 +18,11 @@ export interface TrainerInfo {
 })
 export class MyaccountStudentprofileComponent {
   displayedColumns: string[] = ['name', 'specialization'];
-  dataSource :TrainerInfo[]=[];
+  dataSource: TrainerInfo[] = [];
 
   traineeProfile: TraineeProfile = new TraineeProfile();
-  constructor(private traineeService: TraineeService ,private router:Router) {
+
+  constructor(private traineeService: TraineeService, private router: Router) {
   }
 
   ngOnInit() {
@@ -41,20 +43,21 @@ export class MyaccountStudentprofileComponent {
 
   deleteTraineeProfile(userName: string | undefined) {
     // Assuming that your TraineeService has a method called deleteTrainee()
-    this.traineeService.deleteTrainee(userName).subscribe(data=>{
+    this.traineeService.deleteTrainee(userName).subscribe(data => {
       console.log("trainee deleted successfully")
     })
   }
 
 
   editTrainers() {
-    this.router.navigate(['/edit-trainers-list'],{state:{traineeProfile:this.traineeProfile}})
+    this.router.navigate(['/edit-trainers-list'], {state: {traineeProfile: this.traineeProfile}})
   }
-    viewTrainings(){
-      this.router.navigate(['/trainee-trainings'],{state:{traineeProfile:this.traineeProfile}});
-    }
+
+  viewTrainings() {
+    this.router.navigate(['/trainee-trainings'], {state: {traineeProfile: this.traineeProfile}});
+  }
 
   updateProfile() {
-    this.router.navigate(['/editTraineeProfile'],{state:{traineeProfile:this.traineeProfile}});
+    this.router.navigate(['/editTraineeProfile'], {state: {traineeProfile: this.traineeProfile}});
   }
 }

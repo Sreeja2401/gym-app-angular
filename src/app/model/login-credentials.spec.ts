@@ -1,4 +1,4 @@
-import { LoginCredentials } from './login-credentials';
+import {LoginCredentials} from './login-credentials';
 
 describe('LoginCredentials', () => {
   it('should create an instance', () => {

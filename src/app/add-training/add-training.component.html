@@ -17,43 +17,42 @@
     <h1>
       ADD TRAINING
     </h1>
-  <form [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
 
-  <mat-form-field >
-    <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
-    <mat-label>Enter TrainingName</mat-label>
-    <input matInput  id="trainingName" formControlName="trainingName">
-  </mat-form-field>
+      <mat-form-field >
+        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+        <mat-label>Enter TrainingName</mat-label>
+        <input matInput  id="trainingName" formControlName="trainingName">
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Date</mat-label>
-      <input matInput [matDatepicker]="datePicker"  id="trainingDate" formControlName="trainingDate"
-            >
-      <mat-datepicker-toggle [for]="datePicker" matSuffix></mat-datepicker-toggle>
-      <mat-datepicker #datePicker></mat-datepicker>
-    </mat-form-field>
-
-
-    <mat-form-field >
-      <mat-icon matPrefix class="my-icon">timer</mat-icon>
-      <mat-label>Enter Duration</mat-label>
-      <input matInput  id="trainingDuration" formControlName="trainingDuration">
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="datePicker"  id="trainingDate" formControlName="trainingDate"
+        >
+        <mat-datepicker-toggle [for]="datePicker" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #datePicker></mat-datepicker>
+      </mat-form-field>
 
 
-    <mat-form-field>
-      <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
-      <mat-label>Select Trainee</mat-label>
-      <mat-select id="traineeName" formControlName="traineeUsername">
-        <mat-option *ngFor="let trainee of traineeList" [value]="trainee.userName">
-          {{trainee.firstName}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field >
+        <mat-icon matPrefix class="my-icon">timer</mat-icon>
+        <mat-label>Enter Duration</mat-label>
+        <input matInput  id="trainingDuration" formControlName="trainingDuration">
+      </mat-form-field>
 
-    <button mat-raised-button color="accent" type="submit">add trainings</button>
-  </form>
-    </div>
+
+      <mat-form-field>
+        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
+        <mat-label>Select Trainee</mat-label>
+        <mat-select id="traineeName" formControlName="traineeUsername">
+          <mat-option *ngFor="let trainee of traineeList" [value]="trainee.userName">
+            {{trainee.firstName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" type="submit">add trainings</button>
+    </form>
+  </div>
 </div>
-
 

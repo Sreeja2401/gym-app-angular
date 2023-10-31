@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { JoinUsComponent } from './join-us.component';
+import {JoinUsComponent} from './join-us.component';
 
 describe('JoinUsComponent', () => {
   let component: JoinUsComponent;

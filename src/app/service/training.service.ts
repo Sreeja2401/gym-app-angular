@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {TrainingDetails} from "../model/TrainingDetails";
@@ -10,7 +10,8 @@ export class TrainingService {
 
   private BaseUrl = "http://localhost:8120/training";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   addTraining(trainingDetails: TrainingDetails): Observable<any> {
     console.log(trainingDetails)

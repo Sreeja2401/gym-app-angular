@@ -8,6 +8,7 @@
   flex: 1;
   transform: translateX(13%);
 }
+
 .header h1 {
   font-family: Montserrat;
   font-size: 38px;
@@ -16,16 +17,19 @@
   color: #171A1FFF;
   margin-bottom: 0;
 }
-.image-registrationdetails {
+
+.image-registrationDetails {
   flex: 3;
   display: flex;
   flex-direction: row;
 }
+
 .image {
   flex: 1;
   align-content: flex-end;
 }
-.registrationdetails {
+
+.registrationDetails {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -37,27 +41,32 @@
   color: grey;
 }
 
-.image img{
+.image img {
   width: 350px; /* Adjust the width if needed */
   height: 500px; /* Adjust the height if needed */
   border-radius: 12px;
-  transform: translate(50%,1%);
+  transform: translate(50%, 1%);
   margin-right: 0;
 }
 
 
-.registrationdetails button{
+.registrationDetails button {
   margin-top: 11%;
 }
-.registrationdetails label{
+
+.registrationDetails label {
   font-weight: bold;
   color: dimgrey;
 }
-.registrationdetails mat-form-field{
+
+.registrationDetails mat-form-field {
   width: 80%;
 }
-.registrationdetails button{
-  width:80%
+
+.registrationDetails button {
+  width: 80%;
+  color: #ffffff;
+  background-color: #5a6d8a;
 }
 
 

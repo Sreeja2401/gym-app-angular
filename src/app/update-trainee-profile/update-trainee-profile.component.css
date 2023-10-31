@@ -1,14 +1,16 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
 
 }
-.inner-container{
+
+.inner-container {
   display: flex;
   flex-direction: row;
 
 }
-.student-details{
+
+.student-details {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -16,21 +18,24 @@
   padding-top: 5%;
 
 }
-.image{
+
+.image {
   flex: 1;
   display: flex;
 }
-.image img{
+
+.image img {
   width: 750px;
-  height:600px;
+  height: 600px;
 }
-form{
+
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.student-details form mat-form-field{
+.student-details form mat-form-field {
   width: 150%;
 }
 
@@ -44,6 +49,7 @@ button[type="submit"] {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 button:hover {
   color: #78a8dc;
 }
@@ -55,24 +61,28 @@ button:hover {
   padding-left: 75%;
 }
 
- mat-icon {
-   height: 64%;
-   width: 64%;
+mat-icon {
+  height: 64%;
+  width: 64%;
 }
-.icon{
+
+.icon {
   transform: scale(2);
 }
-mat-toolbar{
+
+mat-toolbar {
   background-color: #e6eef8;
 }
-.student-details button{
+
+.student-details button {
   color: #ffffff;
   background-color: #5a6d8a;
   width: 60%;
   margin-top: 5%;
 
 }
-.username{
+
+.username {
   display: flex;
   flex-direction: row;
 }

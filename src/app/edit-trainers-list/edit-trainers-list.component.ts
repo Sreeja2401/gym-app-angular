@@ -1,16 +1,13 @@
-import {Component, inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {SelectionModel} from "@angular/cdk/collections";
 import {MatTableDataSource} from "@angular/material/table";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TraineeService} from "../service/trainee.service";
 
-import {MatSnackBar, MatSnackBarModule, MatSnackBarRef} from "@angular/material/snack-bar";
-import {MatButtonModule} from "@angular/material/button";
+import {MatSnackBar} from "@angular/material/snack-bar";
 import {TrainerProfile} from "../model/TrainerProfile";
 import {TraineeProfile} from "../model/TraineeProfile";
-import {TraineeDto} from "../model/TraineeDto";
 import {TraineeTrainersList} from "../model/TraineeTrainersList";
-
 
 
 @Component({
@@ -36,7 +33,7 @@ export class EditTrainersListComponent {
   loading = true;
   traineeFirstName: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private traineeService:TraineeService, private _snackBar: MatSnackBar) {
+  constructor(private route: ActivatedRoute, private router: Router, private traineeService: TraineeService, private _snackBar: MatSnackBar) {
   }
 
 
@@ -48,14 +45,14 @@ export class EditTrainersListComponent {
       if (this.traineeProfile.trainersList) {
         for (const trainer of this.traineeProfile.trainersList) {
           this.existingTrainerProfiles.push({
-            username: trainer.username ,
+            username: trainer.username,
             firstName: trainer.firstName,
-            lastName:  trainer.lastName ,
+            lastName: trainer.lastName,
             specialization: trainer.specialization,
             active: true,
-            email:"",
+            email: "",
             traineeList: []
-          } );
+          });
         }
       }
 
@@ -70,7 +67,7 @@ export class EditTrainersListComponent {
   }
 
 
-  fetchFreeTrainers(username: string | undefined){
+  fetchFreeTrainers(username: string | undefined) {
     this.traineeService.getNotAssaignedTrainers(username).subscribe(value => {
       console.log(value);
       for (const trainer of this.existingTrainerProfiles) {
@@ -78,7 +75,7 @@ export class EditTrainersListComponent {
         this.selection.select(trainer);
       }
 
-      // Loop through received trainers and add them to dataSource
+
       for (const trainer of value) {
         this.dataSource.data.push(trainer);
       }
@@ -111,8 +108,6 @@ export class EditTrainersListComponent {
 
   saveSelectedItems() {
     const selectedElements = this.selection.selected;
-
-
     console.log('Selected Elements:');
     let trainers: string[] = [];
     if (selectedElements.length > 0) {
@@ -123,17 +118,13 @@ export class EditTrainersListComponent {
         }
       }
       console.log(trainers)
-     let traineeTrainerList = new TraineeTrainersList(this.traineeProfile.username, trainers);
+      let traineeTrainerList = new TraineeTrainersList(this.traineeProfile.username, trainers);
 
       this.traineeService.getTraineesTrainers(traineeTrainerList).subscribe(value => {
-        console.log("Updated trainers List "+value);
-
+        console.log("Updated trainers List " + value);
         this.openSnackBar();
-
-
         this.router.navigate(['signIn']);
       })
-
     } else {
       console.log("Please select at least one element");
     }

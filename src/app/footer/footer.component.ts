@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {LanguageService} from "../service/language.service";
 
 @Component({
@@ -9,8 +9,8 @@ import {LanguageService} from "../service/language.service";
 export class FooterComponent {
   selectedLanguage: string;
   languages = [
-    { value: 'en', viewValue: 'English' },
-    { value: 'es', viewValue: 'Spanish' },
+    {value: 'en', viewValue: 'English'},
+    {value: 'es', viewValue: 'Spanish'},
   ];
 
   private languageService: LanguageService;

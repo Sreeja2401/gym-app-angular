@@ -11,6 +11,7 @@
 .mat-elevation-z8 {
   width: 100%;
 }
+
 button:hover {
   color: #17345d;
 }
@@ -19,17 +20,19 @@ button:hover {
   height: 48px; /* Set the desired height */
   width: 65px; /* Set the desired width */
 }
-.menu h1{
+
+.menu h1 {
   font-size: 25px;
   padding-right: 50%;
 
 }
-.logo,.menu{
+
+.logo, .menu {
   display: flex;
   flex: 1;
 }
 
-.login {
+.toolbarButton {
   display: flex;
   flex: 3;
   align-items: flex-end;
@@ -40,30 +43,37 @@ mat-icon {
   height: 64%;
   width: 64%;
 }
-.icon{
+
+.icon {
   transform: scale(2);
 }
-mat-toolbar{
+
+mat-toolbar {
   background-color: #e6eef8;
 }
-.student-details button{
+
+.student-details button {
   color: #ffffff;
   background-color: #5a6d8a;
   width: 60%;
   margin-top: 5%;
 
 }
-.username{
+
+.username {
   display: flex;
   flex-direction: row;
 }
-h2{
+
+h2 {
   margin-top: 5%;
 }
-.search-feilds{
+
+.search-feilds {
   margin-left: 25%;
   margin-bottom: 5%;
 }
-.search-feilds button{
+
+.search-feilds button {
   margin-left: 3%;
 }

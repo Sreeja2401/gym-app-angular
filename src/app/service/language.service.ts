@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,9 @@ export class LanguageService {
 
 
   private selectedLanguage: string = 'en';
-  constructor() { }
+
+  constructor() {
+  }
 
   set setLanguage(language: string) {
     this.selectedLanguage = language;

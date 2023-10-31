@@ -1,11 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {TrainerRegistration} from "../model/trainer-registration";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {TraineeProfile} from "../model/TraineeProfile";
-import {TrainerProfile} from "../model/TrainerProfile";
 import {TrainerTrainingsRequestList} from "../model/TrainerTrainingsRequestList";
-
 
 
 @Injectable({
@@ -14,15 +11,18 @@ import {TrainerTrainingsRequestList} from "../model/TrainerTrainingsRequestList"
 export class TrainerService {
 
   private baseUrl = "http://localhost:8120/trainer";
-  constructor(private httpclient:HttpClient) {
+
+  constructor(private httpclient: HttpClient) {
   }
 
-  saveTrainer(trainer:TrainerRegistration):Observable<any>{
-    return this.httpclient.post(`${this.baseUrl}`,trainer);
+  saveTrainer(trainer: TrainerRegistration): Observable<any> {
+    return this.httpclient.post(`${this.baseUrl}`, trainer);
   }
-  getTrainerProfile(username: string|undefined): Observable<any> {
+
+  getTrainerProfile(username: string | undefined): Observable<any> {
     return this.httpclient.get<any>(`${this.baseUrl}?username=${username}`);
   }
+
   updateTrainerProfile(profileUpdate: any): Observable<any> {
     return this.httpclient.put<any>(`${this.baseUrl}`, profileUpdate);
   }

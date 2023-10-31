@@ -1,6 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {group} from "@angular/animations";
-import {FormGroup} from "@angular/forms";
+import {Component} from '@angular/core';
 import {Trainee} from "../model/trainee";
 import {TraineeService} from "../service/trainee.service";
 import {MatDialog} from "@angular/material/dialog";
@@ -8,28 +6,29 @@ import {DataDialogComponent} from "../data-dialog/data-dialog.component";
 
 
 @Component({
-    selector: 'app-trainee-registration',
-    templateUrl: './trainee-registration.component.html',
-    styleUrls: ['./trainee-registration.component.css']
+  selector: 'app-trainee-registration',
+  templateUrl: './trainee-registration.component.html',
+  styleUrls: ['./trainee-registration.component.css']
 })
 export class TraineeRegistrationComponent {
 
 
-    trainee: Trainee = new Trainee();
+  trainee: Trainee = new Trainee();
 
-    constructor(private traineeService: TraineeService,private dialog: MatDialog) {
-    }
+  constructor(private traineeService: TraineeService, private dialog: MatDialog) {
+  }
 
-    onSubmit() {
-        this.traineeService.saveTrainee(this.trainee).subscribe(data=>{
-          console.log(data);
-          this.openDataDialog(data);
-        })
+  onSubmit() {
+    this.traineeService.saveTrainee(this.trainee).subscribe(data => {
+      console.log(data);
+      this.openDataDialog(data);
+    })
 
-    }
+  }
+
   openDataDialog(data: any): void {
     const dialogRef = this.dialog.open(DataDialogComponent, {
-      width: '400px', // Adjust the width as needed
+      width: '400px',
       data: data,
     });
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TrainerRegistration} from "../model/trainer-registration";
 import {TrainerService} from "../service/trainer.service";
 import {MatDialog} from "@angular/material/dialog";
@@ -9,6 +9,7 @@ interface Specialization {
   value: string;
   viewValue: string;
 }
+
 @Component({
   selector: 'app-trainer-registration',
   templateUrl: './trainer-registration.component.html',
@@ -23,16 +24,18 @@ export class TrainerRegistrationComponent {
     {value: 'stretching', viewValue: 'stretching'},
     {value: 'resistance', viewValue: 'resistance'},
   ];
-  constructor(private trainerService:TrainerService,private dialog: MatDialog) {
+  trainer: TrainerRegistration = new TrainerRegistration();
+
+  constructor(private trainerService: TrainerService, private dialog: MatDialog) {
   }
-  trainer: TrainerRegistration=new TrainerRegistration();
 
   onSubmit() {
-  this.trainerService.saveTrainer(this.trainer).subscribe(data=>{
-    console.log(data);
-    this.openDataDialog(data);
-  })
+    this.trainerService.saveTrainer(this.trainer).subscribe(data => {
+      console.log(data);
+      this.openDataDialog(data);
+    })
   }
+
   openDataDialog(data: any): void {
     const dialogRef = this.dialog.open(DataDialogComponent, {
       width: '400px', // Adjust the width as needed

@@ -1,17 +1,18 @@
-
 <div class="container">
   <div class="toolbar">
     <mat-toolbar>
       <div class="logo">
-        <img src="assets/images/icons8-treadmill-64.png" alt="learn-portal-logo" >
+        <img alt="learn-portal-logo" src="assets/images/icons8-treadmill-64.png">
       </div>
       <div class="menu">
         <h1>FitZone</h1>
       </div>
-      <div class="login">
-        <button mat-raised-button  (click)="viewTrainings()">My Trainings</button>
-        <button mat-raised-button class="delete-button"  (click)="deleteTraineeProfile(traineeProfile.username)">Delete Profile</button>
-        <button mat-raised-button  routerLink="/homePage">Sign Out</button>
+      <div class="toolbarButton">
+        <button (click)="viewTrainings()" mat-raised-button>My Trainings</button>
+        <button (click)="deleteTraineeProfile(traineeProfile.username)" class="delete-button" mat-raised-button>Delete
+          Profile
+        </button>
+        <button mat-raised-button routerLink="/homePage">Sign Out</button>
       </div>
     </mat-toolbar>
   </div>
@@ -19,57 +20,56 @@
     <h1>ACCOUNT DETAILS</h1>
   </div>
   <div class="student-profile">
-      <div class="student-details">
-        <h3>User Name</h3>
-        <h4>{{traineeProfile.username}}</h4>
-        <h3>First Name</h3>
-        <h4>{{traineeProfile.firstName}}</h4>
-        <h3>Last Name</h3>
-        <h4>{{traineeProfile.lastName}}</h4>
-        <h3>Status</h3>
-        <h4>{{traineeProfile.active ? 'Active' : 'Inactive'}}</h4>
-        <h3>Date of Birth</h3>
-        <h4>{{traineeProfile.dateOfBirth | date}}</h4>
-        <h3>Address</h3>
-        <h4>{{traineeProfile.address}}</h4>
-        <h3>Email</h3>
-        <h4>{{traineeProfile.email}}</h4>
-        <div>
-          <button mat-raised-button color="primary" (click)="updateProfile()">Edit profile</button>&nbsp;&nbsp;
-          <button mat-raised-button color="primary" routerLink="/changePassword">Change Password</button>
+    <div class="student-details">
+      <h3>User Name</h3>
+      <h4>{{traineeProfile.username}}</h4>
+      <h3>First Name</h3>
+      <h4>{{traineeProfile.firstName}}</h4>
+      <h3>Last Name</h3>
+      <h4>{{traineeProfile.lastName}}</h4>
+      <h3>Status</h3>
+      <h4>{{traineeProfile.active ? 'Active' : 'Inactive'}}</h4>
+      <h3>Date of Birth</h3>
+      <h4>{{traineeProfile.dateOfBirth | date}}</h4>
+      <h3>Address</h3>
+      <h4>{{traineeProfile.address}}</h4>
+      <h3>Email</h3>
+      <h4>{{traineeProfile.email}}</h4>
+      <div>
+        <button (click)="updateProfile()" color="primary" mat-raised-button>Edit profile</button>&nbsp;&nbsp;
+        <button color="primary" mat-raised-button routerLink="/changePassword">Change Password</button>
 
-        </div>
       </div>
-      <div class="my-trainers">
+    </div>
+    <div class="my-trainers">
       <div class="my-trainers-header">
         <h2>My Trainers</h2>
-        <button mat-raised-button color="primary" (click)="editTrainers()">Update Trainers</button>
+        <button (click)="editTrainers()" color="primary" mat-raised-button>Update Trainers</button>
       </div>
       <div class="trainers-table">
         <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <!-- Position Column -->
           <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
           </ng-container>
 
           <!-- Name Column -->
           <ng-container matColumnDef="specialization">
-            <mat-header-cell *matHeaderCellDef> Specialization </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef> Specialization</mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.specialization}} </mat-cell>
           </ng-container>
 
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
-      </div >
+      </div>
       <div class="delete-profile">
         <!--        <button mat-raised-button color="warn" (click)="deleteTraineeProfile(traineeProfile.username)">Delete Profile</button>-->
       </div>
     </div>
   </div>
 
-
-  </div>
+</div>
 
 

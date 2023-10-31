@@ -1,8 +1,8 @@
 .header {
   text-align: center;
-  background: #f0f0f0; /* Background color for the header */
-  padding: 20px; /* Adjust the padding as needed */
-  border-radius: 5px; /* Rounded corners */
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .header h2 {
@@ -10,20 +10,20 @@
   font-size: 24px;
 }
 
-/* Style for the Save List button */
+
 .button-container {
   text-align: center;
   margin: 20px 0;
 }
 
 .button-container button {
-  padding: 10px 20px; /* Adjust the button size as needed */
-  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
 }
 
 .button-container button:hover {
-  background: #ffffff; /* Background color on hover */
-  color: #474af8; /* Text color on hover */
+  background: #ffffff;
+  color: #6781b0;
 }

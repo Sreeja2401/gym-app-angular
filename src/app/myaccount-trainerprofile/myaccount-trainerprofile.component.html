@@ -19,29 +19,29 @@
   </div>
   <div class="trainer-profile">
 
-      <div class="trainer-details">
-        <h3>User Name</h3>
-        <h4>{{trainerProfile.username}}</h4>
-        <h3>First Name</h3>
-        <h4>{{trainerProfile.firstName}}</h4>
-        <h3>Last Name</h3>
-        <h4>{{trainerProfile.lastName}}</h4>
+    <div class="trainer-details">
+      <h3>User Name</h3>
+      <h4>{{trainerProfile.username}}</h4>
+      <h3>First Name</h3>
+      <h4>{{trainerProfile.firstName}}</h4>
+      <h3>Last Name</h3>
+      <h4>{{trainerProfile.lastName}}</h4>
 
-        <h3>Specialization</h3>
-        <h4>{{trainerProfile.specialization}}</h4>
-        <h3>Status</h3>
-        <h4 [ngClass]="{'active': trainerProfile.active, 'inactive': !trainerProfile.active}">
-          {{ trainerProfile.active ? 'Active' : 'Inactive' }}
-        </h4>
-        <h3>Email</h3>
-        <h4>{{trainerProfile.email}}</h4>
-        <div>
-          <button mat-raised-button color="primary" (click)="editTrainers()">Edit profile</button>&nbsp;&nbsp;
+      <h3>Specialization</h3>
+      <h4>{{trainerProfile.specialization}}</h4>
+      <h3>Status</h3>
+      <h4 [ngClass]="{'active': trainerProfile.active, 'inactive': !trainerProfile.active}">
+        {{ trainerProfile.active ? 'Active' : 'Inactive' }}
+      </h4>
+      <h3>Email</h3>
+      <h4>{{trainerProfile.email}}</h4>
+      <div>
+        <button mat-raised-button color="primary" (click)="editTrainers()">Edit profile</button>&nbsp;&nbsp;
 
-          <button mat-raised-button color="accent" routerLink="/changePassword">Change Password</button>
+        <button mat-raised-button color="accent" routerLink="/changePassword">Change Password</button>
 
-        </div>
       </div>
+    </div>
 
     <div class="my-trainees">
       <div class="my-trainees-header">
@@ -71,8 +71,7 @@
         </mat-table>
       </div >
     </div>
-    </div>
-
   </div>
 
+</div>
 

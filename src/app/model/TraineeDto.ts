@@ -1,5 +1,5 @@
-export class TraineeDto{
-  userName: string |undefined
-  firstName: string |undefined
-  lastName: string |undefined
+export class TraineeDto {
+  userName: string | undefined
+  firstName: string | undefined
+  lastName: string | undefined
 }

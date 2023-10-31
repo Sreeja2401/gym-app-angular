@@ -1,6 +1,6 @@
 <mat-toolbar>
   <div class="logo">
-    <img src="assets/images/icons8-treadmill-64.png" alt="learn-portal-logo" >
+    <img alt="learn-portal-logo" src="assets/images/icons8-treadmill-64.png">
   </div>
   <div class="menu">
     <h1>FitZone</h1>
@@ -15,48 +15,48 @@
     <div class="image">
       <img Src="assets/gym-trainer-registration.jpg" alt="trainer-registration-image">
     </div>
-    <form (ngSubmit)="onSubmit()" >
-    <div class="registrationdetails" >
-<div class="form-group">
-<!--      <label>First Name</label>-->
-      <mat-form-field>
-        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
-        <mat-label>Enter Firstname</mat-label>
-        <input matInput type="text" class="form-control" id="firstName"
-               [(ngModel)]="trainer.firstName" name="firstname" >
-      </mat-form-field>
+    <form (ngSubmit)="onSubmit()">
+      <div class="registrationdetails">
+        <div class="form-group">
+          <!--      <label>First Name</label>-->
+          <mat-form-field>
+            <mat-icon class="my-icon" matPrefix>perm_identity</mat-icon>
+            <mat-label>Enter Firstname</mat-label>
+            <input [(ngModel)]="trainer.firstName" class="form-control" id="firstName" matInput
+                   name="firstname" type="text">
+          </mat-form-field>
 
-<!--      <label>Last Name</label>-->
-      <mat-form-field>
-        <mat-icon matPrefix class="my-icon">perm_identity</mat-icon>
-        <mat-label>Enter Lastname</mat-label>
-        <input matInput type="text" class="form-control" id="lastName"
-               [(ngModel)]="trainer.lastName" name="lastName">
-      </mat-form-field>
+          <!--      <label>Last Name</label>-->
+          <mat-form-field>
+            <mat-icon class="my-icon" matPrefix>perm_identity</mat-icon>
+            <mat-label>Enter Lastname</mat-label>
+            <input [(ngModel)]="trainer.lastName" class="form-control" id="lastName" matInput
+                   name="lastName" type="text">
+          </mat-form-field>
 
-<!--      <label>Email</label>-->
-      <mat-form-field>
-        <mat-icon matPrefix class="my-icon">email</mat-icon>
-        <mat-label>Enter Email</mat-label>
-        <input matInput type="text" class="form-control" id="email"
-               [(ngModel)]="trainer.email" name="email">
-      </mat-form-field>
+          <!--      <label>Email</label>-->
+          <mat-form-field>
+            <mat-icon class="my-icon" matPrefix>email</mat-icon>
+            <mat-label>Enter Email</mat-label>
+            <input [(ngModel)]="trainer.email" class="form-control" id="email" matInput
+                   name="email" type="text">
+          </mat-form-field>
 
-<!--      <label>Specialization</label>-->
-      <mat-form-field>
-        <mat-icon matPrefix class="my-icon">fitness_center</mat-icon>
-        <mat-label>please select specialization</mat-label>
-        <mat-select class="form-control" id="trainingType"
-                    [(ngModel)]="trainer.trainingType" name="trainingType">
-          <mat-option *ngFor="let specialization of specializations" [value]="specialization.value">
-            {{specialization.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="submit">submit</button>
+          <!--      <label>Specialization</label>-->
+          <mat-form-field>
+            <mat-icon class="my-icon" matPrefix>fitness_center</mat-icon>
+            <mat-label>please select specialization</mat-label>
+            <mat-select [(ngModel)]="trainer.trainingType" class="form-control"
+                        id="trainingType" name="trainingType">
+              <mat-option *ngFor="let specialization of specializations" [value]="specialization.value">
+                {{specialization.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button color="primary" mat-raised-button type="submit">submit</button>
 
-    </div>
-    </div>
+        </div>
+      </div>
     </form>
   </div>
 </div>

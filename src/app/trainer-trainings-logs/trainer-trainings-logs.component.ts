@@ -1,11 +1,7 @@
-import { Component } from '@angular/core';
-import {TraineeProfile} from "../model/TraineeProfile";
-import {TraineeTrainingsRequestList} from "../model/TraineeTrainingsRequestList";
-import {TrainerDto} from "../model/TrainerDto";
+import {Component} from '@angular/core';
 import {TrainingDetails} from "../model/TrainingDetails";
 import {Router} from "@angular/router";
-import {TraineeService} from "../service/trainee.service";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {formatDate} from "@angular/common";
 import {TraineeDto} from "../model/TraineeDto";
 import {TrainerProfile} from "../model/TrainerProfile";
@@ -19,14 +15,14 @@ import {TrainerService} from "../service/trainer.service";
 })
 export class TrainerTrainingsLogsComponent {
 
-  trainerProfile=new TrainerProfile();
-  trainerTrainingsList=new TrainerTrainingsRequestList();
+  trainerProfile = new TrainerProfile();
+  trainerTrainingsList = new TrainerTrainingsRequestList();
   trainerTrainingsForm: any;
   trainingData: TrainingDetails[] = [];
-  displayedColumns: string[] = ['traineeUserName', 'trainerUsername','trainingDate', 'trainingDuration', 'trainingName', 'trainingType'];
+  displayedColumns: string[] = ['traineeUserName', 'trainerUsername', 'trainingDate', 'trainingDuration', 'trainingName', 'trainingType'];
   traineeList: TraineeDto[] = [];
 
-  constructor(private router: Router,private trainerService:TrainerService,private fb: FormBuilder) {
+  constructor(private router: Router, private trainerService: TrainerService, private fb: FormBuilder) {
     this.trainerTrainingsForm = new FormGroup(
       {
         traineeName: new FormControl(''),
@@ -58,25 +54,27 @@ export class TrainerTrainingsLogsComponent {
     });
 
   }
+
   ngOnInit() {
     const state = window.history.state;
     if (state && state.trainerProfile) {
-      this.trainerProfile=state.trainerProfile;
+      this.trainerProfile = state.trainerProfile;
     }
     if (this.trainerProfile.traineeList) {
-      this.traineeList =this.trainerProfile.traineeList
+      this.traineeList = this.trainerProfile.traineeList
     }
   }
+
   onSubmit() {
     this.trainerTrainingsList = new TrainerTrainingsRequestList();
-    this.trainerTrainingsList.username=this.trainerProfile.username;
+    this.trainerTrainingsList.username = this.trainerProfile.username;
 
-    if(this.trainerTrainingsForm.value.traineeToggle){
+    if (this.trainerTrainingsForm.value.traineeToggle) {
 
-      this.trainerTrainingsList.traineeName=this.trainerTrainingsForm.value.traineeName
+      this.trainerTrainingsList.traineeName = this.trainerTrainingsForm.value.traineeName
     }
 
-    if(this.trainerTrainingsForm.value.dateToggle){
+    if (this.trainerTrainingsForm.value.dateToggle) {
       const startDate = this.trainerTrainingsForm.get('range.start')?.value;
       const endDate = this.trainerTrainingsForm.get('range.end')?.value;
       if (startDate && endDate) {
@@ -89,21 +87,18 @@ export class TrainerTrainingsLogsComponent {
     }
 
 
+    this.trainerService.getTrainerTrainings(this.trainerTrainingsList).subscribe(data => {
+      console.log(data)
+      if (data.error) {
 
-    this.trainerService.getTrainerTrainings(this.trainerTrainingsList).subscribe(data=>{
-        console.log(data)
-      if(data.error)
-      {
-
-      }
-      else{
-        this.trainingData=data;
+      } else {
+        this.trainingData = data;
         console.log(data)
       }
     })
   }
 
   myAccount() {
-    this.router.navigate(['/myAccount-trainer'],{state:{trainerProfile:this.trainerProfile}})
+    this.router.navigate(['/myAccount-trainer'], {state: {trainerProfile: this.trainerProfile}})
   }
 }

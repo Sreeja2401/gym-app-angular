@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,8 +11,9 @@ export class DataDialogComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<DataDialogComponent>,
-    private router:Router
-  ) {}
+    private router: Router
+  ) {
+  }
 
   closeDialog(): void {
     this.dialogRef.close();

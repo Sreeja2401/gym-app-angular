@@ -4,6 +4,7 @@
   overflow: auto;
 
 }
+
 .mat-column-name {
   height: 100px;
 }
@@ -22,6 +23,7 @@
   margin-bottom: 40px;
 
 }
+
 .student-profile {
   flex-direction: row;
   display: flex;
@@ -30,19 +32,21 @@
 
 my-trainers {
   flex-direction: column;
-  flex:1;
+  flex: 1;
   align-items: flex-start;
   margin-left: 5%;
 }
+
 .my-trainers {
   flex-direction: column;
-  flex:1;
+  flex: 1;
   align-items: flex-start;
   margin-left: 5%;
 }
-.student-details{
+
+.student-details {
   flex-direction: column;
-  flex:1;
+  flex: 1;
   align-items: center;
   margin-left: 15%;
   margin-top: 2%;
@@ -51,16 +55,14 @@ my-trainers {
 .my-trainers-header {
   display: flex;
   flex-direction: row;
-  gap:15px;
+  gap: 15px;
   width: 100%;
   margin-bottom: 18px;
 }
-.my-trainers-header h3{
+
+.my-trainers-header h3 {
   margin-right: 45px;
 }
-
-
-
 
 
 .my-trainings button {
@@ -68,20 +70,22 @@ my-trainers {
   height: 42px;
 }
 
-h1,h3,h2 {
+h1, h3, h2 {
   font-weight: bold;
   color: black;
 }
-.my-trainers-header button{
+
+.my-trainers-header button {
   margin-left: 100px;
 }
+
 h3 {
   /*font-weight: bold;*/
   color: black;
   margin-bottom: 1px;
 }
 
-.my-trainers-header h3{
+.my-trainers-header h3 {
   font-weight: bold;
   color: black;
 }
@@ -89,69 +93,75 @@ h3 {
 .trainers-table {
   width: 60%;
 }
-.trainers-table mat-row,mat-cell{
+
+.trainers-table mat-row, mat-cell {
   height: 18px;
   font-size: 12px;
 }
+
 .trainers-table {
   width: 60%;
 }
 
-/* Adjust the height and font size of mat-row and mat-cell as needed */
 .trainers-table mat-row,
 .trainers-table mat-cell {
-  height: 30px; /* Adjust the height to make it readable */
-  font-size: 14px; /* Adjust the font size to make it more legible */
+  height: 30px;
+  font-size: 14px;
 }
 
 button:hover {
   color: #78a8dc;
 }
-button{
+
+button {
   font-family: Poppins;
 }
+
 .logo img {
-  height: 48px; /* Set the desired height */
-  width: 65px; /* Set the desired width */
+  height: 48px;
+  width: 65px;
 }
 
-.menu h1{
+.menu h1 {
   font-size: 25px;
   margin-left: 10%;
 }
 
-.logo,.menu{
+.logo, .menu {
   display: flex;
 }
 
-.login {
+.toolbarButton {
   display: flex;
   flex: 3;
-  align-items: flex-end; /* Align elements to the end */
+  align-items: flex-end;
   padding-left: 60%;
 }
-.login button {
-  margin-right: 10px; /* Adjust the value to set the desired gap */
+
+.toolbarButton button {
+  margin-right: 10px;
 }
 
-.login button{
+.toolbarButton button {
   color: #ffffff;
   background-color: #5a6d8a;
   width: 27%;
 }
 
-mat-toolbar{
+mat-toolbar {
   background-color: #e6eef8;
 }
-.student-details button{
+
+.student-details button {
   color: #ffffff;
   background-color: #5a6d8a;
   width: 23%;
 }
-.my-trainers-header button{
+
+.my-trainers-header button {
   color: #ffffff;
   background-color: #5a6d8a;
   width: 25%;
 }
-/* Apply red color to the button with the 'delete-button' class */
+
 
