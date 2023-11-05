@@ -15,43 +15,58 @@
     <div class="image">
       <img Src="../../../assets/gym-trainer-registration.jpg" alt="trainer-registration-image">
     </div>
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
       <div class="registrationdetails">
         <div class="form-group">
           <!--      <label>First Name</label>-->
           <mat-form-field>
             <mat-icon class="my-icon" matPrefix>perm_identity</mat-icon>
             <mat-label>Enter Firstname</mat-label>
-            <input [(ngModel)]="trainer.firstName" class="form-control" id="firstName" matInput
+            <input formControlName="firstNameFormControl" class="form-control" id="firstName" matInput
                    name="firstname" type="text">
+            <mat-error *ngIf="registrationForm.get('firstNameFormControl').hasError('required')">
+              FirstName <strong>required</strong>
+            </mat-error>
           </mat-form-field>
 
           <!--      <label>Last Name</label>-->
           <mat-form-field>
             <mat-icon class="my-icon" matPrefix>perm_identity</mat-icon>
             <mat-label>Enter Lastname</mat-label>
-            <input [(ngModel)]="trainer.lastName" class="form-control" id="lastName" matInput
+            <input formControlName="lastNameFormControl" class="form-control" id="lastName" matInput
                    name="lastName" type="text">
+            <mat-error *ngIf="registrationForm.get('lastNameFormControl').hasError('required')">
+              LastName <strong>required</strong>
+            </mat-error>
           </mat-form-field>
 
           <!--      <label>Email</label>-->
           <mat-form-field>
             <mat-icon class="my-icon" matPrefix>email</mat-icon>
             <mat-label>Enter Email</mat-label>
-            <input [(ngModel)]="trainer.email" class="form-control" id="email" matInput
+            <input formControlName="emailFormControl" class="form-control" id="email" matInput
                    name="email" type="text">
+            <mat-error *ngIf="registrationForm.get('emailFormControl').hasError('required')">
+              email <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="registrationForm.get('emailFormControl').hasError('email')">
+             email should be in valid form
+            </mat-error>
           </mat-form-field>
 
           <!--      <label>Specialization</label>-->
           <mat-form-field>
             <mat-icon class="my-icon" matPrefix>fitness_center</mat-icon>
             <mat-label>please select specialization</mat-label>
-            <mat-select [(ngModel)]="trainer.trainingType" class="form-control"
+            <mat-select formControlName="trainingTypeFormControl" class="form-control"
                         id="trainingType" name="trainingType">
               <mat-option *ngFor="let specialization of specializations" [value]="specialization.value">
                 {{specialization.viewValue}}
               </mat-option>
             </mat-select>
+            <mat-error *ngIf="registrationForm.get('trainingTypeFormControl').hasError('required')">
+              trainingType <strong>required</strong>
+            </mat-error>
           </mat-form-field>
           <button color="primary" mat-raised-button type="submit">submit</button>
 

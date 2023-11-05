@@ -16,6 +16,7 @@ import {AddTrainingComponent} from "./trainer/add-training/add-training.componen
 import {TrainerTrainingsLogsComponent} from "./trainer/trainer-trainings-logs/trainer-trainings-logs.component";
 import {traineeGuard} from "./guard/trainee.guard";
 import {trainerGuard} from "./guard/trainer.guard";
+import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
 
 const routes: Routes = [
   {
@@ -58,11 +59,7 @@ const routes: Routes = [
     path: "homePage",
     component: HomePageComponent
   },
-  {
-    path: '', // Empty path (default route)
-    redirectTo: 'homePage',
-    pathMatch: 'full' // Use 'full' to ensure a complete match
-  },
+
   {
     path: "edit-trainers-list",
     canActivate:[traineeGuard],
@@ -92,8 +89,17 @@ const routes: Routes = [
     path: "addTrainings",
     canActivate:[trainerGuard],
     component: AddTrainingComponent
-  }
-
+  },
+  {
+    path: '', // Empty path (default route)
+    redirectTo: 'homePage',
+    pathMatch: 'full'
+  },
+  {
+    path: "**",
+    component:PagenotfoundComponent
+  },
+  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) }
 ];
 
 @NgModule({

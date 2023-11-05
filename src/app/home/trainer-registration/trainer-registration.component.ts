@@ -4,6 +4,7 @@ import {TrainerService} from "../../service/trainer.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DataDialogComponent} from "../../common/data-dialog/data-dialog.component";
 import {Router} from "@angular/router";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 
 interface Specialization {
@@ -26,11 +27,21 @@ export class TrainerRegistrationComponent {
     {value: 'resistance', viewValue: 'resistance'},
   ];
   trainer: TrainerRegistration = new TrainerRegistration();
+  registrationForm: any;
 
   constructor(private trainerService: TrainerService, private dialog: MatDialog,private router:Router) {
+    this.registrationForm=new FormGroup(
+      {
+        firstNameFormControl:new FormControl('',[Validators.required]),
+        lastNameFormControl:new FormControl('',[Validators.required]),
+        emailFormControl:new FormControl('',[Validators.required,Validators.email]),
+        trainingTypeFormControl:new FormControl('',[Validators.required]),
+      }
+    )
   }
 
   onSubmit() {
+    this.trainer=this.registrationForm.value
     this.trainerService.saveTrainer(this.trainer).subscribe(data => {
       console.log(data);
       this.openDataDialog(data);

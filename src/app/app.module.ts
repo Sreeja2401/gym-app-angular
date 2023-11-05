@@ -39,6 +39,7 @@ import {AddTrainingComponent} from './trainer/add-training/add-training.componen
 import {UpdateTrainerProfileComponent} from './trainer/update-trainer-profile/update-trainer-profile.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {TrainerTrainingsLogsComponent} from './trainer/trainer-trainings-logs/trainer-trainings-logs.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import {TrainerTrainingsLogsComponent} from './trainer/trainer-trainings-logs/tr
     AddTrainingComponent,
     UpdateTrainerProfileComponent,
     TrainerTrainingsLogsComponent,
+    PagenotfoundComponent,
 
 
   ],
